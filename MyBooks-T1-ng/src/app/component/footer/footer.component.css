@@ -1,0 +1,19 @@
+.footer-ppal {
+    background-color: #0b290b;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
