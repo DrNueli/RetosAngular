@@ -1,0 +1,54 @@
+
+<div class="fondo1">
+    <div class="fondo2">
+        <div class="card-ppal">
+            <div *ngIf="books.length == 0" style="margin-top: 7%;"><h1 style="color: aqua;">No existen libros</h1></div>
+            <div class="cards book" *ngFor="let book of books; let i=index">
+                <div class="card cont-books">
+                    <img class="card-img" style="width: 250px; height: 250px;" src="{{book.photo}}" alt="">
+                    <div class="card-cont" style="padding: 5%;">
+                        <div class="card-body" style="display: flex; flex-direction: column;">
+                            <p class="card-txt">Tipo/Formato: {{book.type}}</p>
+                            <p class="card-title">Titulo: {{book.title}}</p>
+                            <p class="card-txt">Autor: {{book.author}}</p>
+                            <p class="card-txt">{{book.id_book | refBook}}</p>
+                            <p class="card-price">{{book.price}}€</p>
+                            <button class="card-button" style="color: green;" [ngClass]="{'color-diferente': i % 2 === 0}">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form1">
+            <h3 style="color: aqua; padding: 10px;"> Nuevo Libro</h3>
+            <form action="" style="display: flex; flex-direction: column; color: aquamarine;">
+                <div class="form-item">
+                    <label for="">ID del Libro: </label>
+                    <input type="text" placeholder="ID libro" #id_book>
+                </div>
+                <div class="form-item">
+                    <label for="">Titulo: </label>
+                    <input type="text" placeholder="Titulo del libro" #title>
+                </div>
+                <div class="form-item">
+                    <label for="">Tipo de Libro</label>
+                    <input type="text" placeholder="Tipo de Libro" #type>
+                </div>
+                <div class="form-item">
+                    <label for="">Autor: </label>
+                    <input type="text" placeholder="Autor" #author>
+                </div>
+                <div class="form-item">
+                    <label for="">Precio: </label>
+                    <input type="number" placeholder="Precio" #price>
+                </div>
+                <div class="form-item">
+                    <label for="">URL: </label>
+                    <input type="text" placeholder="imagen" #photo>
+                </div>
+            </form>
+            <button style="width: 300px;" (click)="crearLibro(id_book.value, title.value, type.value, author.value, price.value, photo.value)">Guardar Libro</button>
+        </div>
+    </div>
+</div>

@@ -9,10 +9,14 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
 import { RegisterComponent } from './pages/register/register.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { BooksComponent } from './pages/books/books.component';
+import { RefBookPipe } from './pipes/ref-book.pipe';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'books', component: BooksComponent },
 ];
 
 @NgModule({
@@ -23,6 +27,8 @@ const routes: Routes = [
     HomeComponent,
     FormRegisterComponent,
     RegisterComponent,
+    BooksComponent,
+    RefBookPipe,
   ],
   imports: [
     BrowserModule,
